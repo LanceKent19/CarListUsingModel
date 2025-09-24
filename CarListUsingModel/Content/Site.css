@@ -8,13 +8,27 @@
 }
 
 header{
-    padding-top:40px;
-    height:40px;
+    padding-top:20px;
+    height:60px;
     width:100%;
-    gap:20px;
     display:flex;
+    justify-content:center;
     align-items:center;
-    padding-left:50px;
+}
+
+header .header-nav{
+    margin-top:10px;
+    display:flex;
+    width:fit-content;
+    padding:10px;
+    gap:20px;
+    border-radius:10px;
+    border:1px solid black;
+    box-shadow:10px 10px 10px black;
+    align-items:center;
+}
+header h3{
+    color:var(--primary-color);
 }
 
 header ul{
@@ -28,13 +42,12 @@ header ul li {
 }
 
 header ul li a{
-    color: blue;
+    color: var(--primary-color);
     transition: 0.3s all ease;
-    text-decoration: none;
 }
 
 header ul li a:hover {
-    color: #011434;
+    color: blue;
 }
 
 * {
@@ -44,7 +57,7 @@ header ul li a:hover {
     font-family: Poppins, 'Segoe UI';
 }
 
-input {
+input, textarea {
     padding: 5px;
     font-size: 12px;
 }
@@ -99,65 +112,65 @@ label strong, span, label {
     align-items:center;
 }
 
-    .form-canva form {
-        padding: 20px;
-        border: 1px solid black;
-        border-radius: 10px;
-        width: 100%;
-        max-width: 700px;
-        height: 100%;
-        max-height: 600px;
-        background-color: white;
-        /*    background-color:wheat;*/
-        box-shadow: 10px 10px 10px black;
-    }
+.form-canva .form {
+   padding: 20px;
+   border: 1px solid black;
+   border-radius: 10px;
+   width: 100%;
+   max-width: 650px;
+   height: 100%;
+   max-height: 800px;
+   box-shadow: 10px 10px 10px black;
+}
 
-        .form-canva form .payroll-information-canva {
-            height: 100%;
-            width: 100%;
-            display: flex;
-            gap: 20px;
-        }
+.form-canva .form .payroll-information-canva {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  gap: 20px;
+}
 
-    .form-canva .payroll-information-canva .payroll-information-left {
-        width: 100%;
-        height: 100%;
-        /*    background-color:purple;*/
-    }
+.form-canva .payroll-information-canva .payroll-information-left {
+  width: 100%;
+  height: 100%;
+  /*    background-color:purple;*/
+}
 
-    .form-canva .payroll-information-canva .personal-information {
-        display: flex;
-        flex-direction: column;
-        gap: 3px;
-        width: 320px;
-        height: fit-content;
-        /*    background-color:yellow;*/
-        padding: 0 20px 10px 0;
-    }
+.form-canva .payroll-information-canva .personal-information {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 320px;
+  height: fit-content;
+  padding: 0 20px 10px 0;
+}
+.form-canva .payroll-information-canva .personal-information span{
+    display:flex;
+    flex-direction:column;
+}
 
-    .form-canva .payroll-information-canva .salary-information {
-        width: 320px;
-        height: fit-content;
-        /*    background-color:orange;*/
-        padding: 0 20px 10px 0;
-        display: flex;
-        flex-direction: column;
-    }
+.form-canva .payroll-information-canva .salary-information {
+  width: 320px;
+  height: fit-content;
+  /*background-color:orange;*/
+  padding: 0 20px 10px 0;
+  display: flex;
+  flex-direction: column;
+}
 
-    .form-canva .payroll-information-canva .buttons {
-        width: 320px;
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-
-        /*    background-color:brown;*/
-    }
-        .form-canva .payroll-information-canva .buttons button {
-            padding: 10px 40px;
-            cursor: pointer;
-            border-radius: 10px;
-            transition: 0.3s all ease;
-        }
+.form-canva .payroll-information-canva .buttons {
+  width: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  /*background-color:brown;*/
+}
+.form-canva .payroll-information-canva .buttons button {
+  padding: 10px 40px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: 0.3s all ease;
+}
 
 .form-voting .voter-buttons button {
     padding: 5px 45px;

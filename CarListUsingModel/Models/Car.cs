@@ -8,9 +8,9 @@ namespace CarListUsingModel.Models
     public class Car
     {
         public int carID {  get; set; }
-        public string carBrand { get; set; }
-        public string carDescription { get; set; }
-        public string carModel { get; set; }
-        public int carPrice { get; set; }
+        public String carBrand { get; set; }
+        public String carDescription { get; set; }
+        public String carModel { get; set; }
+        public double carPrice { get; set; }
     }
 }
