@@ -31,69 +31,47 @@
     @Styles.Render("~/Content/Site.css")
 </head>
 <body>
-    <div class="form-canva">
-        <form>
-            <h1>Payroll System</h1>
-            <div class="payroll-information-canva">
-                <div class="payroll-information-left">
-                    <div class="personal-information">
-                        <h3>Personal Information</h3>
-                        <label>Employee Id: </label><input type="number" name="employeeId" required />
-                        <label>Employee Name: </label><input type="text" name="employeeName" required />
-                        <label>Employee Position: </label><select name="employeePosition" required>
-                            <option selected hidden value="">Select Position</option>
-                            <option>Front-end Developer</option>
-                            <option>Backend-Developer</option>
-                            <option>Full-Stack Developer</option>
-                        </select>
-                        <label>Employee Gender: </label><select name="employeeGender" required>
-                            <option selected hidden value="">Select Gender</option>
-                            <option>Male</option>
-                            <option>Female</option>
-                            <option>LGBTQIA++</option>
-                            <option>Prefer not to say</option>
-                        </select>
-
+    <header>
+        <p>Car Enthusiast Website</p>
+        <ul>
+            <li>@Html.ActionLink("List of Cars", "CarTablePage", "Car", new { area = "" }, new { @class = "" })</li>
+            <li>|</li>
+            <li>@Html.ActionLink("Add a Car", "CarPage", "Car", new { area = "" }, new { @class = "" })</li>
+        </ul>
+    </header>
+    <div class="main">
+        <div class="form-canva">
+            <form>
+                <h1>Car Listing System</h1>
+                <div class="payroll-information-canva">
+                    <div class="payroll-information-left">
+                        <div class="personal-information">
+                            <h3>Add Car</h3>
+                            <label>Car ID: </label><input type="number" name="employeeId" required />
+                            <label>Car Brand: </label><input type="text" name="employeeName" required />
+                            <label>Car Description: </label><input type="text" name="employeeId" required />
+                            <label>Car Price (PHP): </label><input type="number" name="employeeName" required />
+                        </div>
+                        <div class="buttons">
+                            <button type="submit" class="save-btn">Save</button>
+                            <button type="reset" class="cancel-btn" onclick="resetButton()">Cancel</button>
+                        </div>
                     </div>
-                    <div class="salary-information">
-                        <h3>Salary Information</h3>
-                        <label>Enter Rate Per Day </label><input type="number" name="ratePerDay" required />
-                        <label>No. of Days Work </label><input type="number" name="daysOfWork" required />
-                    </div>
-                    <div class="buttons">
-                        <button type="submit" class="save-btn">Save</button>
-                        <button type="reset" class="cancel-btn" onclick="resetButton()">Cancel</button>
-                    </div>
-                </div>
-                <div class="payroll-information-right">
-                    <div class="details-informations">
-                        <h3>Details</h3>
-                        <label><strong>Employee ID: </strong><span>@employeeId</span></label>
-                        <label><strong>Employee Name: </strong><span>@employeeName</span></label>
-                        <label><strong>Employee Position: </strong><span>@employeePositon</span></label>
-                        <label><strong>Employee Gender: </strong><span>@employeeGender</span></label>
-                    </div>
-                    <div class="salary-computation">
-                        <h3>Salary Computation</h3>
-                        <label><strong>Rate Per Day(₱): </strong><span>@ratePerDay</span></label>
-                        <label><strong>No. of Days Work: </strong><span>@daysOfWork</span></label>
-                        <label><strong>Gross Pay(₱): </strong><span>@grossPay</span></label>&nbsp;
-                        <h4>Deductions</h4>
-                        <label><strong>SSS: </strong><span>@sss</span></label>
-                        <label><strong>Philhealth </strong><span>@philhealth</span></label>
-                        <label><strong>PAG-IBIG: </strong><span>@pagibig</span></label>
-                        <label><strong>Tax: </strong><span>@tax</span></label>&nbsp;
-                        <label><strong>Net Pay(₱): </strong><span>@netPay</span></label>
-                    </div>
-                    <div class="footer-link">
-                        <ul>
-                            <li>@Html.ActionLink("Are you a voter?", "CarTablePage", "Car", new { area = "" }, new { @class = "" })</li>
-                        </ul>
+                    <div class="payroll-information-right">
+                        <div class="details-informations">
+                            <h3>Details</h3>
+                            <label><strong>Car ID: </strong><span>@employeeId</span></label>
+                            <label><strong>Car Brand: </strong><span>@employeeName</span></label>
+                            <label><strong>Car Model: </strong><span>@employeePositon</span></label>
+                            <label><strong>Car Description: </strong><span>@employeeGender</span></label>
+                            <label><strong>Car Price(PHP): </strong><span>@employeeGender</span></label>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
+
     <script>
         function resetButton() {
             const spanDetails = document.querySelectorAll('.details-informations span');
