@@ -13,5 +13,9 @@ namespace CarListUsingModel.Controllers
         {
             return View();
         }
+
+        public ActionResult CarTablePage() {       
+            return View();
+        }
     }
 }

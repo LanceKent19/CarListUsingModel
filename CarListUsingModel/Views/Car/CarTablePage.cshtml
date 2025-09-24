@@ -1,0 +1,80 @@
+﻿
+@{
+    Layout = null;
+    ViewBag.Title = "A Simple Voting System";
+
+    var initialMessage = "Please Input your Age";
+    var age = Request["age"];
+    var isRegistered = Request["registered"];
+    var color = "#8d8d8d";
+
+    if (age != null)
+    {
+        var ageOutput = age.AsInt();
+        var isRegisteredOutput = isRegistered.AsBool();
+
+        if (ageOutput >= 18 && isRegisteredOutput == true)
+        {
+            initialMessage = "Eligible to Vote!";
+            color = "green";
+        }
+        else if (ageOutput >= 18 && isRegisteredOutput == false)
+        {
+            initialMessage = "Please register first!";
+            color = "orange";
+        }
+        else if (ageOutput <= 17 && isRegisteredOutput == true)
+        {
+            initialMessage = "Invalid Inputs!";
+            color = "red";
+        }
+        else if (ageOutput <= 17 && isRegisteredOutput == false)
+        {
+            initialMessage = "Invalid Inputs!";
+            color = "red";
+        }
+    }
+
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="icon" type="image/svg" href="~/Content/icons/voting-icon.svg" />
+    @Styles.Render("~/Content/Site.css")
+</head>
+<body>
+    <main>
+        <form class="form-voting">
+            <div class="headings">
+                <h1>Voter Verification</h1>
+                <p id="initial-message" style="color:@color">@initialMessage</p>
+            </div>
+            <div class="voter-inputs">
+                <span id="age-line"><label>Enter Age: </label><input type="number" name="age" id="input-age" required /></span>
+                <span id="registered-voter-line"><input type="checkbox" name="registered" value="true" /><label>Registered Voter?</label></span>
+            </div>
+            <div class="voter-buttons">
+                <button type="submit">Verify</button>
+                <button type="reset" onclick="resetButton()">Cancel</button>
+            </div>
+            <div class="footer-link" id="age-footer">
+                <ul>
+                    <li>@Html.ActionLink("Are you a Payroll Admin?", "CarPage", "Car", new { area = "" }, new { @class = "" })</li>
+                </ul>
+            </div>
+        </form>
+    </main>
+    <script>
+        function resetButton() {
+            document.getElementById("initial-message").innerText = "Please Input your Age";
+            document.getElementById("input-age").value = "";
+            document.getElementById("initial-message").style.color = "#8d8d8d";
+        }
+    </script>
+</body>
+</html>
