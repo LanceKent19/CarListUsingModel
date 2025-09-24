@@ -16,7 +16,7 @@ namespace CarListUsingModel
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Car", action = "CarPage", id = UrlParameter.Optional }
+                defaults: new { controller = "Cars", action = "Details", id = UrlParameter.Optional }
             );
         }
     }

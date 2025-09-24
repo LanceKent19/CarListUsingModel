@@ -2,21 +2,12 @@
 @{
     Layout = null;
 
-    var employeeId = Request["employeeId"] ?? "Value";
-    var employeeName = Request["employeeName"] ?? "Value";
-    var employeePositon = Request["employeePosition"] ?? "Value";
-    var employeeGender = Request["employeeGender"] ?? "Value";
-    var ratePerDay = Request["ratePerDay"] ?? "0";
-    var daysOfWork = Request["daysOfWork"] ?? "0";
+    var carID = Request["carID"] ?? "Value";
+    var carBrand = Request["carBrand"] ?? "Value";
+    var carModel = Request["carModel"] ?? "Value";
+    var carDescription = Request["carDescriptiom"] ?? "Value";
+    var carPrice = Request["carPrice"] ?? "Value";
 
-    var grossPay = ratePerDay.AsInt() * daysOfWork.AsInt();
-
-    var sss = grossPay * 0.05;
-    var philhealth = grossPay * 0.05;
-    var pagibig = grossPay * 0.05;
-    var tax = grossPay * 0.05;
-
-    var netPay = grossPay - (sss + philhealth + pagibig + tax);
 }
 
 <!DOCTYPE html>
@@ -34,23 +25,24 @@
     <header>
         <p>Car Enthusiast Website</p>
         <ul>
-            <li>@Html.ActionLink("List of Cars", "CarTablePage", "Car", new { area = "" }, new { @class = "" })</li>
+            <li>@Html.ActionLink("List of Cars", "Lists", "Cars", new { area = "" }, new { @class = "" })</li>
             <li>|</li>
-            <li>@Html.ActionLink("Add a Car", "CarPage", "Car", new { area = "" }, new { @class = "" })</li>
+            <li>@Html.ActionLink("Add a Car", "Details", "Cars", new { area = "" }, new { @class = "" })</li>
         </ul>
     </header>
     <div class="main">
         <div class="form-canva">
             <form>
-                <h1>Car Listing System</h1>
+                <h1>Discaya's Luxurious Cars</h1>
                 <div class="payroll-information-canva">
                     <div class="payroll-information-left">
                         <div class="personal-information">
                             <h3>Add Car</h3>
-                            <label>Car ID: </label><input type="number" name="employeeId" required />
-                            <label>Car Brand: </label><input type="text" name="employeeName" required />
-                            <label>Car Description: </label><input type="text" name="employeeId" required />
-                            <label>Car Price (PHP): </label><input type="number" name="employeeName" required />
+                            <label>Car ID: </label><input type="number" name="carID" required />
+                            <label>Car Brand: </label><input type="text" name="carBrand" required />
+                            <label>Car Description: </label><input type="text" name="carDescription" required />
+                            <label>Car Description: </label><input type="text" name="carModel" required />
+                            <label>Car Price (PHP): </label><input type="number" name="carPrice" required />
                         </div>
                         <div class="buttons">
                             <button type="submit" class="save-btn">Save</button>
@@ -60,11 +52,11 @@
                     <div class="payroll-information-right">
                         <div class="details-informations">
                             <h3>Details</h3>
-                            <label><strong>Car ID: </strong><span>@employeeId</span></label>
-                            <label><strong>Car Brand: </strong><span>@employeeName</span></label>
-                            <label><strong>Car Model: </strong><span>@employeePositon</span></label>
-                            <label><strong>Car Description: </strong><span>@employeeGender</span></label>
-                            <label><strong>Car Price(PHP): </strong><span>@employeeGender</span></label>
+                            <label><strong>Car ID: </strong><span>@carID</span></label>
+                            <label><strong>Car Brand: </strong><span>@carBrand</span></label>
+                            <label><strong>Car Model: </strong><span>@carModel</span></label>
+                            <label><strong>Car Description: </strong><span>@carDescription</span></label>
+                            <label><strong>Car Price(PHP): </strong><span>@carPrice</span></label>
                         </div>
                     </div>
                 </div>

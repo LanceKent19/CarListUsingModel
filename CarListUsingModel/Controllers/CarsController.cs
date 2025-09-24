@@ -6,15 +6,16 @@ using System.Web.Mvc;
 
 namespace CarListUsingModel.Controllers
 {
-    public class CarController : Controller
+    public class CarsController : Controller
     {
-        // GET: Car
-        public ActionResult CarPage()
+        // GET: Cars
+        public ActionResult Details()
         {
             return View();
         }
 
-        public ActionResult CarTablePage() {       
+        public ActionResult Lists()
+        {
             return View();
         }
     }
