@@ -120,7 +120,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\CarController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -143,6 +143,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\font\OFL.txt" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -152,7 +153,24 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include=".gitignore" />
+    <Content Include="Content\font\Poppins-Black.ttf" />
+    <Content Include="Content\font\Poppins-BlackItalic.ttf" />
+    <Content Include="Content\font\Poppins-Bold.ttf" />
+    <Content Include="Content\font\Poppins-BoldItalic.ttf" />
+    <Content Include="Content\font\Poppins-ExtraBold.ttf" />
+    <Content Include="Content\font\Poppins-ExtraBoldItalic.ttf" />
+    <Content Include="Content\font\Poppins-ExtraLight.ttf" />
+    <Content Include="Content\font\Poppins-ExtraLightItalic.ttf" />
+    <Content Include="Content\font\Poppins-Italic.ttf" />
+    <Content Include="Content\font\Poppins-Light.ttf" />
+    <Content Include="Content\font\Poppins-LightItalic.ttf" />
+    <Content Include="Content\font\Poppins-Medium.ttf" />
+    <Content Include="Content\font\Poppins-MediumItalic.ttf" />
+    <Content Include="Content\font\Poppins-Regular.ttf" />
+    <Content Include="Content\font\Poppins-SemiBold.ttf" />
+    <Content Include="Content\font\Poppins-SemiBoldItalic.ttf" />
+    <Content Include="Content\font\Poppins-Thin.ttf" />
+    <Content Include="Content\font\Poppins-ThinItalic.ttf" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
@@ -175,9 +193,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Car\CarPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

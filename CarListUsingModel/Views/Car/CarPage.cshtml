@@ -1,0 +1,111 @@
+﻿
+@{
+    Layout = null;
+
+    var employeeId = Request["employeeId"] ?? "Value";
+    var employeeName = Request["employeeName"] ?? "Value";
+    var employeePositon = Request["employeePosition"] ?? "Value";
+    var employeeGender = Request["employeeGender"] ?? "Value";
+    var ratePerDay = Request["ratePerDay"] ?? "0";
+    var daysOfWork = Request["daysOfWork"] ?? "0";
+
+    var grossPay = ratePerDay.AsInt() * daysOfWork.AsInt();
+
+    var sss = grossPay * 0.05;
+    var philhealth = grossPay * 0.05;
+    var pagibig = grossPay * 0.05;
+    var tax = grossPay * 0.05;
+
+    var netPay = grossPay - (sss + philhealth + pagibig + tax);
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" type="image/svg" href="~/Content/icons/money-svgrepo-com.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width" />
+    <title>Payroll System</title>
+    @Styles.Render("~/Content/Site.css")
+</head>
+<body>
+    <div class="form-canva">
+        <form>
+            <h1>Payroll System</h1>
+            <div class="payroll-information-canva">
+                <div class="payroll-information-left">
+                    <div class="personal-information">
+                        <h3>Personal Information</h3>
+                        <label>Employee Id: </label><input type="number" name="employeeId" required />
+                        <label>Employee Name: </label><input type="text" name="employeeName" required />
+                        <label>Employee Position: </label><select name="employeePosition" required>
+                            <option selected hidden value="">Select Position</option>
+                            <option>Front-end Developer</option>
+                            <option>Backend-Developer</option>
+                            <option>Full-Stack Developer</option>
+                        </select>
+                        <label>Employee Gender: </label><select name="employeeGender" required>
+                            <option selected hidden value="">Select Gender</option>
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>LGBTQIA++</option>
+                            <option>Prefer not to say</option>
+                        </select>
+
+                    </div>
+                    <div class="salary-information">
+                        <h3>Salary Information</h3>
+                        <label>Enter Rate Per Day </label><input type="number" name="ratePerDay" required />
+                        <label>No. of Days Work </label><input type="number" name="daysOfWork" required />
+                    </div>
+                    <div class="buttons">
+                        <button type="submit" class="save-btn">Save</button>
+                        <button type="reset" class="cancel-btn" onclick="resetButton()">Cancel</button>
+                    </div>
+                </div>
+                <div class="payroll-information-right">
+                    <div class="details-informations">
+                        <h3>Details</h3>
+                        <label><strong>Employee ID: </strong><span>@employeeId</span></label>
+                        <label><strong>Employee Name: </strong><span>@employeeName</span></label>
+                        <label><strong>Employee Position: </strong><span>@employeePositon</span></label>
+                        <label><strong>Employee Gender: </strong><span>@employeeGender</span></label>
+                    </div>
+                    <div class="salary-computation">
+                        <h3>Salary Computation</h3>
+                        <label><strong>Rate Per Day(₱): </strong><span>@ratePerDay</span></label>
+                        <label><strong>No. of Days Work: </strong><span>@daysOfWork</span></label>
+                        <label><strong>Gross Pay(₱): </strong><span>@grossPay</span></label>&nbsp;
+                        <h4>Deductions</h4>
+                        <label><strong>SSS: </strong><span>@sss</span></label>
+                        <label><strong>Philhealth </strong><span>@philhealth</span></label>
+                        <label><strong>PAG-IBIG: </strong><span>@pagibig</span></label>
+                        <label><strong>Tax: </strong><span>@tax</span></label>&nbsp;
+                        <label><strong>Net Pay(₱): </strong><span>@netPay</span></label>
+                    </div>
+                    <div class="footer-link">
+                        <ul>
+                            <li>@Html.ActionLink("Are you a voter?", "Age", "Voting", new { area = "" }, new { @class = "" })</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script>
+        function resetButton() {
+            const spanDetails = document.querySelectorAll('.details-informations span');
+            spanDetails.forEach(span => {
+                span.textContent = "Value";
+            });
+
+            const spanSalary = document.querySelectorAll('.salary-computation span');
+            spanSalary.forEach(span => {
+                span.textContent = "0";
+            })
+        }
+    </script>
+</body>
+</html>
