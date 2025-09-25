@@ -9,12 +9,12 @@
 
 <html>
 <head>
+    <link rel="icon" type="image/svg" href="~/Content/icon-svg/car.svg"/>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/svg" href="~/Content/icons/voting-icon.svg" />
     @Styles.Render("~/Content/Site.css")
 </head>
 <body>
@@ -30,18 +30,27 @@
     </header>
     <main>
         <table>
-
-            @foreach (var x in Model)
-            {
+            <thead>
                 <tr>
-                    <td>@x.carID</td>
-                    <td>@x.carBrand</td>
-                    <td>@x.carModel</td>
-                    <td>@x.carDescription</td>
-                    <td>@x.carPrice</td>
+                    <th>Car ID</th>
+                    <th>Car Brand</th>
+                    <th>Car Model</th>
+                    <th>Car Description</th>
+                    <th>Car Price</th>
                 </tr>
-            }
-
+            </thead>
+            <tbody>
+                @foreach (var x in Model)
+                {
+                    <tr>
+                        <td>@x.carID</td>
+                        <td>@x.carBrand</td>
+                        <td>@x.carModel</td>
+                        <td>@x.carDescription</td>
+                        <td>@x.carPrice</td>
+                    </tr>
+                }
+            </tbody>
         </table>
     </main>
 </body>

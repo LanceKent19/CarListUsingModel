@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="icon" type="image/svg" href="~/Content/icons/money-svgrepo-com.svg" />
+    <link rel="icon" type="image/svg" href="~/Content/icon-svg/car.svg"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -34,20 +34,19 @@
                     <div class="payroll-information-left">
                         <div class="personal-information">
                              <h3>Add Car</h3>
-                                @using (Html.BeginForm("lists", "Cars", FormMethod.Post))
+                                @using (Html.BeginForm())
                                 {
-                                        <span><label>Car ID: </label>@Html.TextBoxFor(x => x.carID, new { required = "required" })<span></span></span>
-                                        <span><label>Car Brand: </label>@Html.TextBoxFor(x => x.carBrand, new {required = "required"})<span></span></span>
-                                        <span><label>Car Model: </label>@Html.TextBoxFor(x => x.carModel, new {required ="required"})<span></span></span>
-                                        <span><label>Car Description: </label>@Html.TextAreaFor(x => x.carDescription, new {required="required"})<span></span></span>
-                                        <span><label>Car Price (PHP): </label>@Html.TextBoxFor(x => x.carPrice, new {required ="required"})<span></span></span>
+                                        <span><label>Car ID: </label>@Html.TextBoxFor(x => x.carID, new { required = "required" ,@class = "inputs"})<span></span></span>
+                                        <span><label>Car Brand: </label>@Html.TextBoxFor(x => x.carBrand, new {required = "required", @class = "inputs"})<span></span></span>
+                                        <span><label>Car Model: </label>@Html.TextBoxFor(x => x.carModel, new {required ="required", @class = "inputs"})<span></span></span>
+                                        <span><label>Car Description: </label>@Html.TextAreaFor(x => x.carDescription, new {required="required", @class = "inputs"})<span></span></span>
+                                        <span><label>Car Price (PHP): </label>@Html.TextBoxFor(x => x.carPrice, new {required ="required", @class = "inputs" })<span></span></span>
                                             <br />
                                         <div class="buttons">
                                             <button type="submit" class="save-btn">Save</button>
                                             <button type="reset" class="cancel-btn" onclick="resetButton()">Cancel</button>
                                         </div>
                                 }
- 
                         </div>
                     </div>
                     <div class="payroll-information-right">
@@ -70,11 +69,6 @@
             spanDetails.forEach(span => {
                 span.textContent = "Value";
             });
-
-            const spanSalary = document.querySelectorAll('.salary-computation span');
-            spanSalary.forEach(span => {
-                span.textContent = "0";
-            })
         }
     </script>
 </body>

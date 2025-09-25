@@ -46,8 +46,10 @@ namespace CarListUsingModel.Controllers
         new Car() { carID = 6, carBrand = "Chevrolet", carModel = "Silverado", carDescription = "Full-size pickup truck with a robust build.", carPrice = 1800000 },
         new Car() { carID = 7, carBrand = "Mercedes", carModel = "Benz E-Class", carDescription = "Elegant sedan with premium features and style.", carPrice = 2800000 },
         new Car() { carID =8, carBrand = "Audi", carModel = "A4", carDescription = "Sedan with a blend of performance and luxury.", carPrice = 2200000 },
+        new Car() { carID =9, carBrand = "Hyundai", carModel = "Tucson", carDescription = "Compact SUV offering excellent value for money.", carPrice = 1150000 },
+        new Car() { carID =10, carBrand = "Kia", carModel = "Sorento", carDescription = "Versatile SUV with a spacious interior.", carPrice = 1450000 },
         // Your new car added from the form:
-        c            };
+       };
             return View(carList);
         }
     }
