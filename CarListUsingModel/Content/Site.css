@@ -69,9 +69,8 @@ select {
 
 body {
     width: 100%;
-    height: 100%;
     display:flex;
-    min-height: 100vh;
+    height: 100vh;
     flex-direction:column;
 }
 .main{
@@ -149,15 +148,6 @@ label strong, span, label {
     flex-direction:column;
 }
 
-.form-canva .payroll-information-canva .salary-information {
-  width: 320px;
-  height: fit-content;
-  /*background-color:orange;*/
-  padding: 0 20px 10px 0;
-  display: flex;
-  flex-direction: column;
-}
-
 .form-canva .payroll-information-canva .buttons {
   width: 320px;
   display: flex;
@@ -209,144 +199,44 @@ button[type=reset]:hover {
     /*    background-color:red;*/
 }
 
-    .form-canva .payroll-information-canva .payroll-information-right .details-informations {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        max-width: 348px;
-        height: fit-content;
-        padding-bottom: 5px;
-    }
+.form-canva .payroll-information-canva .payroll-information-right .details-informations {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 348px;
+  height: fit-content;
+  padding-bottom: 5px;
+}
 
-        .form-canva .payroll-information-canva .payroll-information-right .details-informations label span {
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
+.form-canva .payroll-information-canva .payroll-information-right .details-informations label span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
-    .form-canva .payroll-information-canva .payroll-information-right .salary-computation {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        max-width: 348px;
-        height: 100%;
-    }
-
-        .form-canva .payroll-information-canva .payroll-information-right .salary-computation label span {
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-    .form-canva .payroll-information-canva .payroll-information-right .voter-link {
-        width: 100%;
-        height: 100%;
-        padding-top: 30px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .form-canva .payroll-information-canva .payroll-information-right ul li {
-        font-size: 12px;
-        list-style-type: none;
-        padding: 0;
-    }
-
-        .form-canva .payroll-information-canva .payroll-information-right ul li a {
-            color: #011434;
-            transition: 0.3s all ease;
-        }
-
-
-            .form-canva .payroll-information-canva .payroll-information-right ul li a:hover {
-                color: blue;
-            }
-/* CSS for Voting System*/
+/* CSS for Lists.cshtml*/
 main {
     width: 100%;
     height: 100%;
-    min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    margin-top:40px;
+    /*    background-color: #f0f0f0;*/
 }
-
-.form-voting {
-    width: 325px;
-    height: 325px;
-    background-color: white;
-    border-radius: 10px;
-    border: 1px solid black;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
+table{
+    height:fit-content;
+    box-shadow: 10px 10px 10px black;
+    width:100%;
+    margin:0 100px;
+    background-color:black;
 }
-
-    .form-voting .headings {
-        width: 100%;
-        height: fit-content;
-        /*    background-color:blue;*/
-        padding: 15px 0;
-        text-align: center;
-    }
-
-        .form-voting .headings #initial-message {
-            color: #8d8d8d;
-            font-size: 15px;
-        }
-
-    .form-voting .voter-inputs {
-        display: flex;
-        height: 100%;
-        max-height: 100px;
-        width: 100%;
-        /*    background-color:red;*/
-        flex-direction: column;
-        padding-top: 20px;
-        gap: 5px;
-    }
-
-        .form-voting .voter-inputs #age-line input {
-            width: 100%;
-            font-size: 12px;
-            padding: 3px;
-        }
-
-        .form-voting .voter-inputs #registered-voter-line {
-            padding-left: 80px;
-        }
-
-        .form-voting .voter-inputs span {
-            display: flex;
-            gap: 5px;
-        }
-
-        .form-voting .voter-inputs span {
-            width: 100%;
-        }
-
-            .form-voting .voter-inputs span .input-age {
-                width: 200px;
-                display: flex;
-                align-items: center;
-            }
-
-    .form-voting .voter-buttons {
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-        height: 35px;
-        /*    background-color:antiquewhite;*/
-    }
-
-    .form-voting .voter-inputs input[type=checkbox] {
-        accent-color: var(--primary-color);
-        cursor: pointer;
-    }
-
-    .form-voting #age-footer {
-        padding: 0;
-        height: 50%;
-    }
-/* /CSS for Voting System*/
+tr{
+    padding:0;
+    width:100%;
+    height:100%;
+    background-color:white;
+}
+th, td {
+    text-align: left;
+    padding: 5px 0 5px 5px;
+}

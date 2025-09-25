@@ -1,10 +1,9 @@
 ﻿
 @{
     Layout = null;
-    ViewBag.Title = "A Simple Voting System";
+    ViewBag.Title = "Welcome User!";
 
 }
-
 
 <!DOCTYPE html>
 
@@ -12,17 +11,38 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg" href="~/Content/icons/voting-icon.svg" />
     @Styles.Render("~/Content/Site.css")
 </head>
 <body>
     <header>
-        <p>Car Enthusiast Website</p>
-        <ul>
-            <li>@Html.ActionLink("List of Cars", "Lists", "Cars", new { area = "" }, new { @class = "" })</li>
-            <li>|</li>
-            <li>@Html.ActionLink("Add a Car", "Details", "Cars", new { area = "" }, new { @class = "" })</li>
-        </ul>
+        <div class="header-nav">
+            <h3>Car Enthusiast Website</h3>
+            <ul>
+                <li>@Html.ActionLink("List of Cars", "Lists", "Cars", new { area = "" }, new { @class = "" })</li>
+                <li>|</li>
+                <li>@Html.ActionLink("Add a Car", "Details", "Cars", new { area = "" }, new { @class = "" })</li>
+            </ul>
+        </div>
     </header>
+    <main>
+        <table>
+
+            @foreach (var x in Model)
+            {
+                <tr>
+                    <td>@x.carID</td>
+                    <td>@x.carBrand</td>
+                    <td>@x.carModel</td>
+                    <td>@x.carDescription</td>
+                    <td>@x.carPrice</td>
+                </tr>
+            }
+
+        </table>
+    </main>
 </body>
 </html>
